@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <table id="table"></table>
     <button
       id="btn_TTC"
-      onclick="prompt(5,4)"
+      onclick="createTable(5,4)"
       style="
         margin-left: 10px;
         padding-left: 50px;
@@ -20,21 +22,5 @@
     >
       Click
     </button>
-    <script>
-      let table = document.getElementById("table");
-      function prompt(x, y) {
-        for (i = 0; i < x; i++) {
-          let tr = document.createElement("tr");
-          for (j = 0; j <= y; j++) {
-            let td = document.createElement("td");
-            let tdtext = document.createTextNode(`cellule : ${i}-${j}`);
-            td.appendChild(tdtext);
-            tr.appendChild(td);
-          }
-          table.appendChild(tr);
-        }
-        table.setAttribute("border", "2");
-      }
-    </script>
   </body>
 </html>

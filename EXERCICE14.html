@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Document</title>
     <style>
       table {
@@ -20,19 +22,9 @@
   <body id="body">
     <table id="table"></table>
     <script>
-      let table = document.getElementById("table");
-
-      for (i = 0; i < 5; i++) {
-        let tr = document.createElement("tr");
-        for (j = 0; j < 4; j++) {
-          let td = document.createElement("td");
-          let tdtext = document.createTextNode(`cellule : ${i}-${j}`);
-          td.appendChild(tdtext);
-          tr.appendChild(td);
-        }
-        table.appendChild(tr);
-      }
-      table.setAttribute("border", "2");
+      document.addEventListener("DOMContentLoaded", (event) => {
+        createTable(5, 4);
+      });
     </script>
   </body>
 </html>

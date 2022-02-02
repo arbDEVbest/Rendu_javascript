@@ -72,3 +72,28 @@ function numberlessThenTwenty(a) {
     a += 2;
   }
 }
+function repeatChar() {
+  var tbl = document.getElementById("table");
+  for (i = 1; i <= 5; i++) {
+    var tr = document.createElement("tr");
+    var td = document.createElement("td");
+    var char = i;
+    char = char.toString();
+    var celltext = document.createTextNode(`${char.repeat(i)}`);
+    td.appendChild(celltext);
+    tr.appendChild(td);
+    tbl.appendChild(tr);
+  }
+}
+function tableMulty() {
+  var tbl = document.getElementById("table");
+  for (i = 0; i <= 10; i++) {
+    var tr = document.createElement("tr");
+    var td = document.createElement("td");
+    var rest = 5 * i;
+    var celltext = document.createTextNode(`5  x  ${i}  =  ` + rest);
+    td.appendChild(celltext);
+    tr.appendChild(td);
+    tbl.appendChild(tr);
+  }
+}

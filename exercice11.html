@@ -5,22 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <h2 id="tableh2">Table de 5</h2>
     <table id="table"></table>
     <script>
-      var tbl = document.getElementById("table");
-      for (i = 0; i <= 10; i++) {
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        var rest = 5 * i;
-        var celltext = document.createTextNode(`5  x  ${i}  =  ` + rest);
-        td.appendChild(celltext);
-        tr.appendChild(td);
-        tbl.appendChild(tr);
-      }
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tableMulty();
+      });
     </script>
   </body>
 </html>

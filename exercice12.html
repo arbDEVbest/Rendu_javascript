@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -12,17 +13,9 @@
     <table id="table"></table>
 
     <script>
-      var tbl = document.getElementById("table");
-      for (i = 1; i <= 5; i++) {
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        var char = i;
-        char = char.toString();
-        var celltext = document.createTextNode(`${char.repeat(i)}`);
-        td.appendChild(celltext);
-        tr.appendChild(td);
-        tbl.appendChild(tr);
-      }
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tableMulty();
+      });
     </script>
   </body>
 </html>

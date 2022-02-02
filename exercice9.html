@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="age" type="text" placeholder="Saisissez votre age" style="margin: 20px;width: 200px;"/><br>
+
+    <button
+      id="btn_age"
+      onclick="majorite()"
+      style="
+        margin-left: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 200px;
+        background-color: rgb(151, 151, 235);
+      "
+    >
+      Click
+    </button>
+    <div id="majorite">
+      <div>
+        <p id="reponse"></p>
+        <a href="#" onclick="majorite()">Cliquez ici pour fermer la boîte</a>
+      </div>
+      <script>
+        function majorite() {
+            let age = parseInt(document.getElementById("age").value)
+          el = document.getElementById("majorite");
+          el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
+          if(age >= 18){
+            document.getElementById("reponse").innerHTML = "Vous êtes majeur";
+          }else{
+              document.getElementById("reponse").innerHTML = "Vous êtes mineur"
+          }
+          
+        }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Prix HT: <input id="ht" type="text" style="margin: 10px" /><br />
+
+    <button
+      id="btn_TTC"
+      onclick="prixTtc()"
+      style="
+        margin-left: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        background-color: rgb(151, 151, 235);
+      "
+    >
+      Prix TTC
+    </button>
+    <h2 id="ttc"></h2>
+    <script>
+      function prixTtc() {
+        let ht = parseFloat(document.getElementById("ht").value);
+        let ttc = ht * (1 + 0.2);
+        document.getElementById("ttc").innerHTML = "Prix TTC: " + ttc;
+      }
+    </script>
+  </body>
+</html>

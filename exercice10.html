@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <th>Commune</th>
+        <th>Code Postal</th>
+      </tr>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      var tbl = document.getElementById("table");
+      var tb = document.getElementById("tbody");
+      fetch("Codepos.json")
+        .then((response) => {
+          return response.json();
+        })
+        .then((jsondata) =>
+          jsondata.forEach((element) => {
+            for (i = 0; i < element.length; i++) {
+              var row = document.createElement("tr");
+              var com = document.createElement("td");
+              var comText = document.createTextNode(element[0]);
+              var code = document.createElement("td");
+              var codeText = document.createTextNode(element[1]);
+              com.appendChild(comText);
+              code.appendChild(codeText);
+              row.appendChild(com);
+              row.appendChild(code);
+            }
+            tb.appendChild(row);
+          })
+        );
+
+      tbl.setAttribute("border", "2");
+    </script>
+  </body>
+</html>

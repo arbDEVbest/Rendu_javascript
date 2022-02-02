@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <p id="dix"></p>
+    <script>
+      let body = document.getElementById("body");
+      let liste = document.createElement("ul");
+      body.appendChild(liste);
+      let tag = 0;
+      let i = 0;
+      while (tag <= 10) {
+        let num = Math.floor(Math.random() * 100);
+        if (num <= 10) {
+          let li = document.createElement("li");
+          let textli = document.createTextNode(num);
+          li.appendChild(textli);
+          liste.appendChild(li);
+          if (num === 10) {
+            i += 1;
+            console.log(`${num} est triré : ${i}`);
+          }
+          tag += 1;
+        }
+      }
+      let par = document.getElementById("dix");
+      par.innerText = `Nombre de fois le chiffre dix est tiré : ${i}`;
+      let r = Math.floor(Math.random() * 100);
+      let g = Math.floor(Math.random() * 100);
+      let b = Math.floor(Math.random() * 100);
+      document.body.style.background = `rgb(${r}, ${g}, ${b})`;
+      let ul = document.createElement("ul");
+      for (i = 0; i <= 12; i++) {
+        let lin = document.createElement("li");
+        let img = document.createElement("img");
+        let idUri = Math.floor(Math.random() * 100);
+        img.src = `https://picsum.photos/id/${idUri.toString()}/350/350`;
+        lin.appendChild(img);
+        ul.appendChild(lin);
+        body.appendChild(ul);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Votre budget: <input id="budget" type="text" style="margin: 10px" /><br />
+    Votre Achats: <input id="achats" type="text" style="margin: 10px" /><br />
+    <button
+      id="btn_result"
+      onclick="soldeSuffisant()"
+      style="
+        margin-left: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        background-color: rgb(151, 151, 235);
+      "
+    >
+      solde
+    </button>
+    <h2 id="solde"></h2>
+    <script>
+      function soldeSuffisant() {
+        let budget = parseInt(document.getElementById("budget").value);
+        let achats = parseInt(document.getElementById("achats").value);
+        console.log(budget, achats);
+        if (budget > achats) {
+          document.getElementById("solde").innerHTML = "Solde suffisant";
+        } else {
+          document.getElementById("solde").innerHTML = "Solde insuffisant";
+        }
+      }
+    </script>
+  </body>
+</html>
